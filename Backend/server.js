@@ -1,0 +1,31 @@
+import express from 'express';
+import 'dotenv/config';
+import cors from 'cors'
+import mongoose from 'mongoose';
+
+
+const app = express();
+const PORT = 8080;
+
+app.use(express.json());
+app.use(cors());
+
+
+app.listen(PORT, () => {
+    console.log(`server running on ${PORT}`);
+    connectDB();
+});
+
+const connectDB = async() => {
+    try {
+        await mongoose.connect(process.env.MONGODB_URI);
+        console.log("Connected to Database!");
+    } catch (error) {
+        console.log("Failed to connected with DB", error);
+    }
+}
+
+
+// app.post('/test', async(req, res) => {
+    
+// });
