@@ -1,0 +1,66 @@
+.sidebar {
+    background-color: #171717;
+    color: #b4b4b4;
+    height: 100vh;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1.5px rgba(255, 255, 255, 0.5);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    height: 35px;
+    width: 35px;
+    background-color: white;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+button span {
+    font-size: 22px;
+}
+
+.history {
+    margin: 10px;
+    padding: 10px;
+    height: 100%;
+}
+
+.history li {
+    list-style-type: none;
+    cursor: pointer;
+    padding: 2px 5px;
+    margin-bottom: 0.3rem;
+    font-size: 15px;
+    border: solid 3px transparent;
+    position: relative;
+}
+
+.history li:hover {
+    background-color: rgba(255, 255, 255, 0.09);
+    border-radius: 10px;
+}
+
+.sign {
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    text-align: center;
+    border-top: solid 3px rgba(255, 255, 255, 0.5);
+}
