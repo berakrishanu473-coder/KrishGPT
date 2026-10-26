@@ -1,0 +1,136 @@
+.chats {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow-y: auto;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+
+    scrollbar-width: thin;
+    scrollbar-color: #3a3a3a #000;
+    -ms-overflow-style: none;
+}
+
+h1 {
+    color: #fff;
+    font-size: 25px;
+}
+
+.userDiv {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.gptDiv {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    min-width: 0;
+    font-size: 0.9rem;
+}
+
+.userDiv {
+    justify-content: flex-end;
+}
+
+.userMsg {
+    background-color: #323232;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 12px;
+    max-width: 75%;
+    width: fit-content;
+    overflow-wrap: anywhere;
+}
+
+.gptMsg {
+    color: #fff;
+    padding: 10px 0;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    /* overflow-wrap: anywhere; */
+}
+
+.gptMsg h1,
+.gptMsg h2,
+.gptMsg h3,
+.gptMsg h4,
+.gptMsg p,
+.gptMsg li,
+.gptMsg strong {
+    color: #ffffff;
+}
+
+.gptMsg pre {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 16px;
+    margin: 12px 0;
+    overflow-x: auto;
+
+    white-space: pre;
+    background-color: #0b0b0b !important;
+    color: #ececec;
+    border-radius: 10px;
+}
+
+.gptMsg pre code {
+    background: transparent !important;
+    color: #ececec;
+    display: block;
+    white-space: pre;
+    overflow-wrap: normal;
+    word-break: normal;
+    line-height: 1.6;
+    font-family: Consolas, Monaco, monospace;
+}
+
+/* .gptMsg .hljs-string {
+    color: #98c379 !important;
+}
+
+.gptMsg .hljs-keyword {
+    color: #c678dd !important;
+}
+
+.gptMsg .hljs-title.class_ {
+    color: #e5c07b !important;
+}
+
+.gptMsg .hljs-title.function_ {
+    color: #61afef !important;
+}
+
+.gptMsg .hljs-string {
+    color: #98c379 !important;
+}
+
+.gptMsg .hljs-built_in {
+    color: #e5c07b !important;
+}
+
+/* Method parameters and variable names */
+/* .gptMsg .hljs-params {
+    color: #e3b407 !important;
+}
+
+/* Parentheses, brackets, and punctuation */
+/* .gptMsg .hljs-punctuation {
+    color: #abb2bf !important;
+}  */
+
+/* Java type names */
+/* .gptMsg .hljs-type {
+    color: #e5c07b !important;
+} */
+
+.gptMsg p {
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}

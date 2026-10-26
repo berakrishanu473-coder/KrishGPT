@@ -49,7 +49,7 @@
 .inputBox {
     width: 100%;
     position: relative;
-    max-width: 700px;
+    max-width: 800px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,11 +59,11 @@ textarea {
     width: 100%;
     border: none;
     background-color: rgba(255, 255, 255, 0.09);
-    padding: 15px;
     padding-top: 26px;
     padding-bottom: 5px;
     margin-top:4px;
     margin-left: 10px;
+    margin-right: 10px;
     padding-left: 30px;
     font-size: 0.9rem;
     line-height: 1.5;
@@ -87,6 +87,7 @@ textarea:focus {
     width: 35px;
     font-size: 20px;
     position: absolute;
+    padding-right: 15px;
     right: 15px;
     display: flex;
     align-items: center;
