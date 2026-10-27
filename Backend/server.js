@@ -3,11 +3,6 @@ import 'dotenv/config';
 import cors from 'cors'
 import mongoose from 'mongoose';
 import chatRoutes from './routes/chat.js';
-import path from "path";
-
-dotenv.config({
-    path: path.resolve(process.cwd(), "../.env")
-});
 
 const app = express();
 const PORT = 8080;
