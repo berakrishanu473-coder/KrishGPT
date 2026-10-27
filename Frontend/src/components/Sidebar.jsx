@@ -64,7 +64,7 @@ const Sidebar = () => {
     <section className='sidebar'>
         <button onClick={createNewChat}>
             <img 
-                src="src/assets/blacklogo.png" 
+                src="/favicon2.png" 
                 alt="gpt-logo" 
                 className='logo'
             />
