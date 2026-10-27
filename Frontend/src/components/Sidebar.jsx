@@ -8,11 +8,10 @@ const Sidebar = () => {
 
     const getAllThreads = async() => {
         try {
-            const response = await fetch("http://localhost:8080/api/thread");
+            const response = await fetch(`${import.meta.env.VITE_BASE_URL}/api/thread`);
             const res = await response.json();
             const filteredData = res.map(thread => ({ threadId: thread.threadId, title: thread.title }));
             setAllThreads(filteredData);
-            console.log(filteredData)
         } catch (error) {
             console.log(error);
         }
@@ -31,6 +30,36 @@ const Sidebar = () => {
         setPrevChats([]);
     }
 
+    const changeThread = async(newThreadId) => {
+        setCurrThreadId(newThreadId);
+
+        try {
+            const response = await fetch(`${import.meta.env.VITE_BASE_URL}/api/thread/${newThreadId}`);
+            const res = await response.json();
+            setPrevChats(res);
+            setNewChat(false);
+            setReply(null);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const deleteThread = async(threadId) => {
+        try {
+            const response = await fetch(`${import.meta.env.VITE_BASE_URL}/api/thread/${threadId}`, {method: "DELETE"});
+            const res = await response.json();
+
+            // updated thread re-render
+            setAllThreads(prev => prev.filter(thread => thread.threadId !== threadId));
+
+            if(threadId === currThreadId) {
+                createNewChat();
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
   return (
     <section className='sidebar'>
         <button onClick={createNewChat}>
@@ -45,7 +74,22 @@ const Sidebar = () => {
         <ul className='history'>
             {
                 allThreads?.map((thread, idx) => (
-                    <li key={idx}>{thread.title}</li>
+                    <li 
+                        key={idx}
+                        onClick={(e) => changeThread(thread.threadId)}
+                        className={thread.threadId === currThreadId ? 'highlighted' : ''}
+                    >
+                        {thread.title}
+                        <i 
+                            className="fa-solid fa-trash"
+                            onClick={(e) => {
+                                e.stopPropagation(); // stop event propagation
+                                deleteThread(thread.threadId)
+                            }}
+                        >
+
+                        </i>
+                    </li>
                 ))
             }
         </ul>
