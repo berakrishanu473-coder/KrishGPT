@@ -18,7 +18,7 @@ app.use(cors());
 app.use("/api", chatRoutes);
 
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
     console.log(`server running on ${PORT}`);
     connectDB();
 });
